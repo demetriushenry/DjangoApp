@@ -20,13 +20,19 @@ class User(AbstractUser):
             'unique': "A user with that name already exists.",
         },
     )
-    birthday = models.DateField(default=timezone.now)
-    cpf = models.CharField(max_length=11, unique=True)
-    cep = models.CharField(max_length=9)
-    street = models.CharField(max_length=100)
-    neighborhood = models.CharField(max_length=100)
-    city = models.CharField(max_length=50)
-    state = models.CharField(max_length=50)
+    birthday = models.DateField(default=timezone.now, null=True, blank=True)
+    cpf = models.CharField(
+        max_length=11,
+        unique=True,
+        error_messages={
+            'unique': "A user with that cpf already exists.",
+        },
+    )
+    cep = models.CharField(max_length=9, null=True, blank=True)
+    street = models.CharField(max_length=100, null=True, blank=True)
+    neighborhood = models.CharField(max_length=100, null=True, blank=True)
+    city = models.CharField(max_length=50, null=True, blank=True)
+    state = models.CharField(max_length=50, null=True, blank=True)
 
     USERNAME_FIELD = 'name'
     REQUIRED_FIELDS = []

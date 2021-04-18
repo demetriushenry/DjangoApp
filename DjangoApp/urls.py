@@ -22,7 +22,7 @@ from rest_framework_simplejwt.views import (TokenObtainPairView,
 
 
 router = DefaultRouter()
-router.register('users', UserViewSet, basename='User')
+router.register(r'users', UserViewSet, basename='User')
 
 
 urlpatterns = [
