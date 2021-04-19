@@ -13,6 +13,7 @@ pyyaml = "*"
 uritemplate = "*"
 psycopg2 = "*"
 djangorestframework-simplejwt = "*"
+gunicorn = "*"
 
 [dev-packages]
 pylama = "*"
