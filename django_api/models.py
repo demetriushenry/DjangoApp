@@ -1,3 +1,4 @@
+from cpf_field.models import CPFField
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.db import models
@@ -21,13 +22,7 @@ class User(AbstractUser):
         },
     )
     birthday = models.DateField(default=timezone.now, null=True, blank=True)
-    cpf = models.CharField(
-        max_length=11,
-        unique=True,
-        error_messages={
-            'unique': "A user with that cpf already exists.",
-        },
-    )
+    cpf = CPFField('cpf')
     cep = models.CharField(max_length=9, null=True, blank=True)
     street = models.CharField(max_length=100, null=True, blank=True)
     neighborhood = models.CharField(max_length=100, null=True, blank=True)
