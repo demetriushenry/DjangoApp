@@ -29,13 +29,13 @@
 
 Build the imagens and up the containers
 
-    ```sh
+    ```
     $ docker-compose up -d --build
     ```
 
 Check whether the application is running or not with:
 
-    ```sh
+    ```
     $ docker ps
     ```
 
@@ -43,7 +43,7 @@ Check whether the application is running or not with:
 
 Now it is necessary to run the script for creating the migrations in the django container, generate your static files and, finally, generate a super user to serve as an administrator:
 
-    ```sh
+    ```
     $ docker-compose exec api ./init-prepare.sh
     ```
 
@@ -55,6 +55,6 @@ Test it at [http://localhost:1337/admin/](http://localhost:1337/admin/). The app
 
 If you want to run the unit tests, run the following command:
 
-    ```sh
+    ```
     $ docker-compose exec api python manage.py test
     ```
