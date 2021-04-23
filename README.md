@@ -33,15 +33,15 @@ Build the imagens and up the containers
     $ docker-compose up -d --build
     ```
 
-    Check whether the application is running or not with:
+Check whether the application is running or not with:
 
     ```sh
     $ docker ps
     ```
 
-    3 containers must appear in the list
+3 containers must appear in the list
 
-    Now it is necessary to run the script for creating the migrations in the django container, generate your static files and, finally, generate a super user to serve as an administrator:
+Now it is necessary to run the script for creating the migrations in the django container, generate your static files and, finally, generate a super user to serve as an administrator:
 
     ```sh
     $ docker-compose exec api ./init-prepare.sh
@@ -49,11 +49,11 @@ Build the imagens and up the containers
 
 ### Testing
     
-    Test it at [http://localhost:1337/admin/](http://localhost:1337/admin/). The application uses **Nginx** to serve the static files and **Gunicorn** to run the Django app.
+Test it at [http://localhost:1337/admin/](http://localhost:1337/admin/). The application uses **Nginx** to serve the static files and **Gunicorn** to run the Django app.
 
 ## Unit Tests
 
-    If you want to run the unit tests, run the following command:
+If you want to run the unit tests, run the following command:
 
     ```sh
     $ docker-compose exec api python manage.py test
